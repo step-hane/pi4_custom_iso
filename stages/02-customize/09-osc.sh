@@ -45,3 +45,23 @@ WantedBy=multi-user.target
 EOS
 
 systemctl enable oscserver.service
+
+# --- Créer et activer le service systemd OSC ---
+cat << 'EOP' > /etc/systemd/system/oscserver.service
+[Unit]
+Description=Python OSC Server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/\${USER_NAME}/osc_server.py
+WorkingDirectory=/home/\${USER_NAME}/
+StandardOutput=journal
+StandardError=journal
+Restart=always
+User=\${USER_NAME}
+
+[Install]
+WantedBy=multi-user.target
+EOP
+
+systemctl enable oscserver.service
