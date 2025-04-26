@@ -1,0 +1,4 @@
+IMG_NAME="Custom_RPiOS_Bookworm_rt_x11"
+USER_NAME="pi"
+BOOT_SMART="true"
+TARGET_ARCH="arm64"
