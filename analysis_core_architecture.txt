@@ -1,0 +1,30 @@
+/analysis_core/
+├── rust/
+│   ├── lib.rs         # Algorithmes principaux (analyses, modèles de Boltz Jones, etc.)
+│   ├── osc_output.rs  # Module OSC/MIDI/DMX
+│   └── Cargo.toml     # Crate Rust
+├── python/
+│   ├── models.py      # Structures TensorFlow de base
+│   ├── osc_output.py  # Module OSC/MIDI/DMX Python
+│   └── requirements.txt
+└── README.md         
+
+
+pi4_custom_iso/            # racine du projet pi-gen
+├── config                 # configuration globale pi-gen
+│   └── config             # IMAGE_NAME, USER_NAME, ARCH,…
+├── hooks                  # scripts pré/post
+│   └── RESIZE_ROOTFS.sh   # extension du rootfs au premier boot
+├── stages
+│   ├── 00-base            # stage de base (pi-gen)
+│   ├── 01-packages        # installation de paquets
+│   │   └── stage.conf
+│   ├── 02-customize       # compilations et scripts custom
+│   │   ├── 01-jack_rt.sh
+│   │   ├── 02-rust.sh
+│   │   ├── 03-python_tf.sh
+│   │   ├── 04-cpp_deps.sh
+│   │   ├── 05-x11.sh         # support X11 + auto-start monitor
+│   │   └── 06-tests.sh
+│   └── 03-cleanup         # nettoyage optionnel
+└── README.md
