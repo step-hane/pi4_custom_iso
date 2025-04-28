@@ -1,0 +1,17 @@
+
+[package]
+name = "pi4_custom_iso"
+version = "0.1.0"
+edition = "2021"
+
+authors = ["step-hane <your.email@example.com>",
+           "onihilist <onhlt@nihilist.moe>"]
+description = "Real-Time-Beat-Tracking-System"
+license = "MIT"
+
+[[bin]]
+name = "main"
+path = "src/rust/test_boltz_jones.rs"
+
+[dependencies]
+rustfft = "6.2.0"

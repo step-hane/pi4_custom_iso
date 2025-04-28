@@ -15,6 +15,7 @@ impl BoltzJonesDetector {
     pub fn new(sample_rate: usize) -> Self {
         Self {
             sample_rate,
+            timestamps: vec![Instant::now()],
             history: Vec::new(),
             max_history_len: sample_rate * 10, // 10 secondes d'historique maximum
         }
